@@ -14,11 +14,6 @@ const Sidebar = () => {
     <div className="sidebar">
       <h1 className="ims">IMS</h1>
       <ul className="nav-links">
-        {isAuth && (
-          <li>
-            <Link to="/dashboard">Dashboaard</Link>
-          </li>
-        )}
 
         {isAuth && (
           <li>
@@ -41,16 +36,18 @@ const Sidebar = () => {
         {isAdmin && (
           <li>
             <Link to="/supplier">Supplier</Link>
+             
           </li>
         )}
 
-        {isAuth && (
+        {/* Hide Sell and Purchase for Admin */}
+        {isAuth && !isAdmin && (
           <li>
             <Link to="/purchase">Purchase</Link>
           </li>
         )}
 
-        {isAuth && (
+        {isAuth && !isAdmin && (
           <li>
             <Link to="/sell">Sell</Link>
           </li>
