@@ -15,7 +15,7 @@ const LoginPage = () => {
       const loginData = { email, password };
       const res = await ApiService.loginUser(loginData);
 
-      console.log(res)
+      console.log(res);
 
       if (res.status === 200) {
         ApiService.saveToken(res.token)
